@@ -41,14 +41,15 @@ export const getPokeDetails = id => async dispatch => {
 //ph3 thunk action creator
 export const createPoke = params => async dispatch => {
   const response = await fetch(`/api/pokemon`, {
-    method: 'post',
+    method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
     },
     body: JSON.stringify(params)
   });
   const pokemon = await response.json();
-  debugger
+
   dispatch(addOnePokemon(pokemon));
   return pokemon;
 }
