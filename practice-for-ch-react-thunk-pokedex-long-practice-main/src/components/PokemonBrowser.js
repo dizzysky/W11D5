@@ -29,7 +29,7 @@ const PokemonBrowser = () => {
     //     dispatch(load(list));
     //   }
     // })
-  },[]);
+  },[dispatch]);
 
 
   if (!pokemon) {

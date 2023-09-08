@@ -29,6 +29,22 @@ export const getPokemon = () => async dispatch => {
   }
 };
 
+//phase 2 thunk action creator
+export const getPokeDetails = id => async dispatch => {
+  const response = await fetch(`/api/pokemon/${id}`); 
+
+  if (response.ok) {
+    const one = await response.json(); 
+    dispatch(addOnePokemon(one));
+  }
+};
+
+export const createPoke = params => async dispatch => {
+  const postPoke = poke => {
+    return fetch('/api/pokemon')
+  }
+}
+
 export const getPokemonTypes = () => async dispatch => {
   const response = await fetch(`/api/pokemon/types`);
 
